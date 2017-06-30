@@ -2,33 +2,37 @@
  
  <head>
  <link rel="stylesheet" type="text/css" href="static/css/base.css">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <title>{% block title %}Blah{% endblock %}</title>
  </head>
  <body>
- <div>
- 	<header class="Header"">
- 		<div id="header">
- 			<ul>
- 				<li><a id="justTerms" href="#home">
- 					<div>JustTerms</div>
- 					</a>
- 				</li>
- 				<li><a id="wordBank"  href="#Words">
- 					<div>WordBank</div>
- 					</a>
- 				</li>
- 				<li><a id="test" href="#tests">
- 					<div id="3">Test</div>
- 					</a>
- 				</li>
- 				<li><a id="login" href="#Login">
- 					<div id="4">Login</div>
- 					</a>
- 				</li>
- 			</ul>
- 		</div>
- 	</header>
- </div>
+ 	<div>
+ 		<header class="Header"">
+ 			<div class="buttons" id="header">
+ 				<ul>
+ 					<li><a id="justTerms" href="#home">
+ 						<div>JustTerms</div>
+ 						</a>
+ 					</li>
+ 					<li><a id="wordBank"  href="#Words">
+ 						<div>Study</div>
+ 						</a>
+ 					</li>
+ 					<li><a id="test" href="#tests">
+ 						<div id="3">Test</div>
+ 						</a>
+ 					</li>
+ 					<li><a id="login" href="#Login">
+ 						<div id="4">Login</div>
+ 						</a>
+ 					</li>
+ 				</ul>
+ 			</div>
+ 		</header>
+ 	</div>
+ 	<div id="content">
+ 		{% block content %} {% endblock %}
+ 	</div>
  </body>
 </html>
  		

@@ -1,0 +1,159 @@
+body {
+	background-color: black;
+}
+
+div #header {
+	margin-top: 0px;
+	width: 100%;
+	height: 130px;
+	border: 2px solid black;
+	list-style-type: none;
+	font-weight: bold;
+	background-color: #056091;
+}
+th {
+	background-color: #34124f;
+}
+
+#content button{
+	outline: none;
+	margin-top: 100px;
+	margin-left: 55px;
+	width: 90%;
+	font-size: 120%;
+	height: 45px;
+	border: 1px solid black;
+	background-color: #34124f;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 9px #056091;
+}
+
+#list {
+	table-layout: fixed;
+	margin-top: 66px;
+	margin-left: 245px;
+	background-color:#056091;
+	border: 3px solid black;
+	border-radius: 10px;
+	width: 60%;
+}
+
+#tableHeader {
+	position: absolute;
+	margin-top: 25px;
+	margin-left: 245px;
+	background-color:#056091;
+	border: 3px solid black;
+	border-radius: 10px;
+	width: 60%;
+	text-align: center;
+	font-size: 120%;
+	color: white;
+	font-weight: bold;
+}
+
+
+td {
+	font-weight: bold;
+	background-color: #34124f;
+	border: 2px solid black;
+	color: white;
+}
+
+#word, #def{
+	background-color: #056091;
+	border: none;
+}
+
+
+
+
+
+	
+
+#content button:hover{
+	color: #00c7ff;
+	border: 3px solid black;
+	cursor: pointer;
+	box-shadow: 0 10px #056091;
+}
+
+#content button:active{
+	border: 2px solid black;
+	transform: translateY(4px);
+	box-shadow: 0 4px #056091;
+}
+
+#header ul{
+	margin-top: 0px;
+}
+
+#header ul li {
+	list-style-type: none;
+}
+
+#header ul li a{
+	margin-top: 0px;
+	text-align: center;
+	font-size: 170%;
+}
+#header ul li a div{
+	line-height: 120px;
+	color: white;
+}
+
+#header #justTerms {
+	layout: fixed;
+	outline: none;
+	margin-left: 30px;
+	float: left; display: inline;
+	text-decoration:none !important;
+	display: inline-block;
+	color: white;
+}
+
+#header #wordBank {
+	layout: fixed;
+	outline: none;
+	margin-left: 250px;
+	float: left; display: inline;
+	text-decoration:none !important;
+	display: inline-block;
+	color: white;
+}
+
+#header #test {
+
+	outline: none;
+	margin-left: 270px;
+	float: left; display: inline;
+	text-decoration:none !important;
+	display: inline-block;
+	color: white;
+}
+
+#header #login {
+	outline: none;
+	margin-right: 65px;
+	float: right; display: inline;
+	text-decoration:none !important;
+	display: inline-block;
+	color: white;
+}
+
+#header ul li a div:hover{
+	padding: 0;
+	border: 3px solid black;
+	height: 100%;
+	width: 100%;
+	background-color: #44019b;
+	color: #00c7ff;
+}
+
+
+	
+
+	
+
+

@@ -1,3 +1,18 @@
 {% extends "base.html" %}
 
 {% block title %}HomePage{% endblock %}
+
+{% block content %}
+	<div id="createList">
+		<button class="w3-rectangle w3-round-xlarge" onclick="createList()">Create New Word List</button>
+	</div>
+	<div id="tableHeader">
+		<hl">Your Current List</hl>
+	</div>
+	<Table id="list">
+		<tr>
+			<td id="word">Words:</td>
+			<td id="def">Definitons:</td>
+	</table>
+<script type="text/javascript" src="static/createList.js"></script>
+{% endblock %}
