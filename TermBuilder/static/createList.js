@@ -4,9 +4,9 @@ var table = document.getElementById("list");
 var tableRows = table.getElementsByTagName('tr');
 
 function createList() {
-	if(tableRows.length > 0){
-		for(i = tableRows.length -1; i>0; i--){
-			table.removechild(tableRows[i]);
+	if(tableRows.length > 19){
+		while(table.rows.length > 1){
+			table.deleteRow(1);
 		}
 	}
 	xhttp.open("GET", "ajax/create_word_list/", true)

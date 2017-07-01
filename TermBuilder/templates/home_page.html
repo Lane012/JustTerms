@@ -13,6 +13,13 @@
 		<tr>
 			<td id="word">Words:</td>
 			<td id="def">Definitons:</td>
+		</tr>
+		{% for word, definition in wordList %}
+			<tr>
+				<td>{{ word}</td>
+				<td>{{definition}}</td>
+			</tr>
+		{% endfor %}
 	</table>
 <script type="text/javascript" src="static/createList.js"></script>
 {% endblock %}

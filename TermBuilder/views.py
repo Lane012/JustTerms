@@ -7,6 +7,9 @@ from django.http import JsonResponse
 import json
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth import login
+
+
 
 def home_page(request):
 	template = loader.get_template('home_page.html')
@@ -17,7 +20,7 @@ def create_user_word_list(request):
 	wordList = []
 	if(request.user.is_authenticated()):
 		wordList = WordBank().getWords()
-		request.user.profile.setWordList(wordList)
+		
 		
 	jsonWord = {"Words": []}
 	
@@ -28,3 +31,15 @@ def create_user_word_list(request):
 	
 	
 	return HttpResponse(json.dumps(jsonWord))
+
+
+def format_words_and_definitions_to_strings(wordList):
+	words = ""
+	definitions = ''
+	for word, definition in wordList:
+		delimiter = '; '
+		words += word + delimiter
+		definitions += definition + delimiter
+	
+	return (words, definitions)
+	
