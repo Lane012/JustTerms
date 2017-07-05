@@ -14,10 +14,10 @@
 			<td id="word">Words:</td>
 			<td id="def">Definitons:</td>
 		</tr>
-		{% for word, definition in wordList %}
+		{% for word in words %}
 			<tr>
-				<td>{{ word}</td>
-				<td>{{definition}}</td>
+				<td>{{ word.value}}</td>
+				<td>{{word.definition.value}}</td>
 			</tr>
 		{% endfor %}
 	</table>

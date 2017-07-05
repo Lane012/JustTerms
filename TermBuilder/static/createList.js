@@ -2,6 +2,9 @@
 var xhttp = new XMLHttpRequest();
 var table = document.getElementById("list");
 var tableRows = table.getElementsByTagName('tr');
+var body = document.getElementsByTagName("body")[0];
+var button = document.getElementsByTagName("button")[0];
+
 
 function createList() {
 	if(tableRows.length > 19){
@@ -10,6 +13,8 @@ function createList() {
 		}
 	}
 	xhttp.open("GET", "ajax/create_word_list/", true)
+	body.style.cursor = "wait";
+	button.style.cursor = "wait";
 	xhttp.onreadystatechange = function() {
 		if(xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200){
 			data = JSON.parse(xhttp.responseText);
@@ -31,6 +36,8 @@ function createList() {
 				definitionCell.innerHTML = wordDefinition.toUpperCase();
 			}
 		}
+		body.style.cursor = "default";
+		button.style.cursor = "pointer";
 		header.style.textAlign = "center";
 	};
 	xhttp.send();

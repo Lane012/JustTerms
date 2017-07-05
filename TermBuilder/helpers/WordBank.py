@@ -8,8 +8,13 @@ class WordBank():
         self.WordFetcher =  WordFetcher()
         
     
-    def getWords(self):
+    def getWords(self, allWords):
         jsonWordObject = self.getWordDictionary()
+        
+        if(allWords == True):
+            return jsonWordObject  
+        
+        
         numStack = []
         numCount = 0
         keyWords = list(jsonWordObject.keys())

@@ -5,17 +5,9 @@ from django.dispatch import receiver
 from django.db.models.fields.related import OneToOneField
 
 
-class Word(models.Model):
-    value = models.CharField(max_length=64)
-    
-class Definition(models.Model):
-    value = models.TextField(max_length=500)
-    word = OneToOneField(Word, on_delete=models.CASCADE)
-    
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    words = models.ForeignKey(Word, on_delete=models.CASCADE, null=True)
     
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created,  **kwargs):
@@ -27,13 +19,23 @@ class Profile(models.Model):
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
     
-    def setWordList(self, words, definitions):
-        self.words = words
-        self.definitions = definitions
+    def addWord(self, word):
+        self.word_set.add(word)
         self.save()
     
     def getWordList(self):
-        return (self.words, self.definitions)
+        return self.word_set
+
+class Word(models.Model):
+    value = models.CharField(max_length=64, null=True)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
+    
+    
+class Definition(models.Model):
+    value = models.TextField(max_length=500, null=True)
+    word = OneToOneField(Word, on_delete=models.CASCADE, null=True)
+    
+
     
  
     
