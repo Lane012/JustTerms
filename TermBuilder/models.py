@@ -6,8 +6,9 @@ from django.db.models.fields.related import OneToOneField
 
 
 
+
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created,  **kwargs):
@@ -23,17 +24,32 @@ class Profile(models.Model):
         self.word_set.add(word)
         self.save()
     
+    def getWordCount(self):
+        return self.word_set.count()
+    
     def getWordList(self):
-        return self.word_set
-
+        return self.word_set.all()
+    
+    def clearWordList(self):
+        self.word_set.clear()
+        
+        
 class Word(models.Model):
     value = models.CharField(max_length=64, null=True)
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
+    profile = models.ManyToManyField(Profile)
     
     
 class Definition(models.Model):
     value = models.TextField(max_length=500, null=True)
-    word = OneToOneField(Word, on_delete=models.CASCADE, null=True)
+    word = OneToOneField(Word, on_delete=models.CASCADE, null=True, unique=True)
+    
+    
+class MasteredWords(models.Model):
+    profile = OneToOneField(Profile, on_delete=models.CASCADE, unique=True)
+    words = models.ManyToManyField(Word)
+    
+    
+
     
 
     
