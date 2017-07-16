@@ -15,7 +15,6 @@ class WordBank():
             return jsonWordObject  
         
         
-        numStack = []
         numCount = 0
         keyWords = list(jsonWordObject.keys())
         Words = []
