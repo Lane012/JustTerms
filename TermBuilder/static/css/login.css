@@ -1,0 +1,54 @@
+
+body {
+	font-family: Permanent Marker;
+	background-color: grey;
+	color: white;
+}
+
+
+
+		
+		
+
+
+form {
+	width: 50%;
+	position: absolute;
+	left: 300px;
+	top: 250px;
+	border: 4px solid black;
+	background-color: black;
+}
+
+#buttonHolder {
+	margin-left: 80px;
+}
+
+button {
+	background-color: #056091;
+	border: 1px solid black;
+	color: black;
+	width: 50%;
+}
+
+#header {
+	position:absolute;
+	margin-top: 20px;
+	margin-left: 500px;
+    font-size: 60%;
+	color: white;
+}
+
+h1 {
+	font-family: Permanent Marker;
+	font-size: 100%;
+}
+h2 {
+ font-family: Permanent Marker;
+ font-size: 40px;
+ position: absolute;
+ left: 370px;
+ top: 200px;
+ font-weight: bold;
+ color: while;
+}
