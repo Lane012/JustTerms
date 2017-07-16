@@ -11,7 +11,7 @@ class WordBank():
     def getWords(self, allWords):
         jsonWordObject = self.getWordDictionary()
         
-        if(allWords == True):
+        if(allWords):
             return jsonWordObject  
         
         

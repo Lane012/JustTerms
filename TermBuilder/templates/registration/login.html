@@ -1,13 +1,22 @@
-{% extends 'base.html' %}
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Permanent Marker" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/static/css/login.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title>Login</title>
+</head>
 
-{% block title %}Login{% endblock %}
-
-{% block content %}
+<body>
+  <div id="header">
+  	<h1>JustTerms</h1>
+  </div>
   <h2>Login</h2>
-  <form method="post">
+  <form id="form" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+    <div id="buttonHolder">
+    	<button class="w3-rectangle w3-round-xlarge" type="submit">Login</button>
+    </div>
   </form>
-  
-{% endblock %}
+</body>
+</html>

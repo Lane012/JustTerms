@@ -1,25 +1,69 @@
 {% extends "base.html" %}
 
+{%block css %}<link rel="stylesheet" type="text/css" href="static/css/justTerms.css"> <link href="https://fonts.googleapis.com/css?family=Abril Fatface" rel="stylesheet" type="text/css">{% endblock %}
+
 {% block title %}HomePage{% endblock %}
 
 {% block content %}
-	<div id="createList">
-		<button class="w3-rectangle w3-round-xlarge" onclick="createList()">Create New Word List</button>
+	<div class=body-container>
+		<div id="greeting">
+			<div class="legend">
+					<div class="legendContainer">
+						<div id="total">{{masteredWordCount}}</div>
+						<div class="meaning" id="green"></div>
+						<div class="statusName" id="mastered">Words Mastered:</div>
+					</div>
+		   </div>Welcome, 
+		   <strong>{{user.first_name }}</strong>
+		</div>
+		<div id="table">
+			<div id="createList">
+				<button class="w3-rectangle" onclick="createList()">Create New Word List</button>
+			</div>
+			
+			<Table id="list">
+				<tr>
+					<td id="word">Words:</td>
+					<td id="def">Definitons:</td>
+				</tr>
+				{% if words.count > 0 %}
+					{% for word in words %}
+						{% if word in mastered_Words %}
+							<tr>
+								<td>{{ word.value}}<div id="status"></div></td>
+								<td>{{word.definition.value}}</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td>{{ word.value}}</td>
+								<td>{{word.definition.value}}</td>
+							</tr>
+						{% endif %}
+					{% endfor %}
+				{% else %}
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+					<tr><td></td><td></td></tr>
+				{%  endif %}
+			</table>
+		</div>
 	</div>
-	<div id="tableHeader">
-		<hl">Your Current List</hl>
-	</div>
-	<Table id="list">
-		<tr>
-			<td id="word">Words:</td>
-			<td id="def">Definitons:</td>
-		</tr>
-		{% for word in words %}
-			<tr>
-				<td>{{ word.value}}</td>
-				<td>{{word.definition.value}}</td>
-			</tr>
-		{% endfor %}
-	</table>
 <script type="text/javascript" src="static/createList.js"></script>
 {% endblock %}
