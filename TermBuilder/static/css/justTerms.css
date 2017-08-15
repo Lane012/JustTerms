@@ -1,31 +1,157 @@
-body {
-	animation-name: greyToBlack;
-	animation-duration: 40s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
-	background-color: #323438;
-	font-family: Abril Fatface;
+
+
+
+
+#lookUp {
+	color: black;
+	font-size: 25px;
+}
+.popover {
+	font-size: 10px;
+	width:100%;
+}
+
+.popover-content {
+	font-size: 10px;
+	background-color: black;
+	
+	border: 1px solid #d6851d;
+}
+
+.popover-title {
+	color: black;
+	background-color: black;
+	border-bottom: none;
+	border: 1px solid #d6851d;
+}
+
+
+strong {
+	font-family: Permanent Marker;
+	font-size: 40px;
+	color: #d6851d;
+}
+
+.row{
+	padding: 0px;
+	background-color: #080c21;
+}
+
+
+#masteredWords {
+	font-size: 30px;
+	background-color:  #041e47;
+	text-align: center;
+	border: 4px solid black;
+	color: white;
+	margin-left: 5px;
+	margin-bottom: 60px;
+	box-shadow: 0px 5px 0px #d6851d;
+}
+
+
+#passedTest {
+	font-size: 30px;
+	background-color:  #041e47;
+	text-align: center;
+	border: 4px solid black;
+	color: white;
+	margin-right: 5px;
+	margin-bottom: 60px;
+	box-shadow: 0px 5px 0px #d6851d;
+}
+
+#example3 {
+	font-size: 30px;
+	background-color:  #041e47;
+	text-align: center;
+	border: 4px solid black;
+	color: white;
+	margin-right: 5px;
+	margin-bottom: 60px;
+	box-shadow: 0px 5px 0px #d6851d;
+}
+	
+	
+
+#rightBox {
+	margin-top: 0px;
+	font-family: Lobster;
+	padding:10px;
+}
+	
+#leftBox {
+	text-align: center;
+	color: white;
+	font-family: Lobster;
+	margin-top: 0px;
+	padding: 10px;
+}
+
+
+
+.examples {
+	font-size: 60px;
+	color: white;
+	text-align: center;
+}
+
+#example1{
+	background-color: #041e47;
+	border: 4px solid  black;
+	margin-left: 5px;
+	margin-bottom: 60px;
+	box-shadow: 0px 5px 0px #d6851d;
+}
+
+#example2{
+		margin-left: 5px;
+		border: 4px solid  black;
+		background-color: #041e47;
+		box-shadow: 0px 10px 0px #d6851d;
+}
+	
+	
+
+
+#table{
+	margin-top: 10px;
+	border: 4px solid #041e47;
+	background-color: black;
+	
 }
 
 
 
 
-	
-	
 
-@keyframes greyToBlack{
-	25%{background-color: #323438;}
-	75%{background-color: #09090a;}
-	100%{background-color: #323438;}
-	
+#tableBox {
+	width: 80%;
+	margin-left: 5%;
+	margin-top: 8%;
+	padding: 0px;
 }
 
-.body-container {
-	height:300%;
-	border-left: 50px solid #041e47;
-	border-right: 50px solid #041e47;
+
+
+
+
+
+.container {
+	padding: 0px;
 }
 
+
+
+#list {
+	width:100%;
+}
+
+#createList {
+	width: 100%;
+	height: 3%;
+	margin-top: 4%;
+}
 
 
 #status {
@@ -41,199 +167,34 @@ body {
 }
 
 
-
-#table {
-	animation-name: animateBorder;
-	animation-duration: 40s;
-	animation-timing-function: ease-out;
-	animation-iteration-count: infinite;
-	position: absolute;
-	border: 4px solid #041e47;
-	background-color: #395f7c;
-	border-radius: 15px;
-	margin-left: 110px;
-	margin-top: 250px;
-	width: 40%;	
-	height:1100px;
-	box-shadow: 0px 20px 20px #000000;
-}
-
-
-@keyframes animateBorder{
-	25%{border: 4px solid #041e47}
-	75%{border: 4px solid #d6851d;}
-	25%{border: 4px solid #041e47}
+.table-hover tbody tr:hover td{
+  background-color: #d6851d;
 }
 
 
 
-.legend {
-	animation-name: animateBorder;
-	animation-duration: 40s;
-	animation-timing-function: ease-out;
-	animation-iteration-count: infinite;
-	position:absolute;
-	border: 4px solid #041e47;
-	background-color: #395f7c;
-	border-radius: 15px;
-	margin-left:50px;
-	margin-top:	7px;
-	width:28%;
-	height:45px;
+
+
+
+
+
+thead {
+	font-size: 30px;
 }
 
 
-	
-
-
-
-.legendContainer{
-	font-family: Abril Fatface;
-	position:relative;
-	margin-top: 0px;
-	margin-left: 0px;
-	color: white;
-	text-size: 12px;
-}
-
-#legendHeader {
-	font-family: Abril Fatface;
-	position:absolute;
-	margin-left: 190px;
-	margin-top: 10px;
-	font-size: 22px;
-}
-.statusName {
-	position:absolute;
-	font-size: 20px;
-	margin-top: 5px;
-}
-
-.meaning{
-	position: absolute;
-	margin-top:12px;
-	width: 20px;
-	height: 20px;
-	border: 2px solid black;
-	border-radius: 30px;
-}
-
-#mastered{
-	margin-left: 45px;
-}
-
-#total{
-	color: #d6851d;
-	position:absolute;
-	text-size: 10px;
-	margin-top: -13px;
-	margin-left: 210px;
-}
-	
-#green {
-	position:absolute;
-	background-color: green;;
-	margin-left: 10px;
-}
-
-#red {
-	position:absolute;
-	background-color: red;
-	margin-left: 610px;
-}
-
-#yellow {
-	background-color: yellow;
-	margin-left: 360px;
-}
-
-#good{
-	margin-left: 300px;
-}
-
-#needsWork{
-	margin-left: 480px;
-}
-	
-
-
-	
-	
-
-
-
-
-
-
-#createList {
-	margin-left: 0px;
-}
-
-#greeting {
-	animation-name: animateGreeting;
-	animation-duration: 60s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	position: absolute;
-	border-top: 4px solid #395f7c;
-	border-bottom: 4px solid #395f7c;
-	border-right: 4px solid #041e47;
-	border-left: 4px solid #041e47;
-	border-radius: 50px;
-	margin-top: 150px;
-	width:80%;
-	text-align: center;
-	font-family: Abril Fatface, Monospace;
-	margin-left: 110px;
-	font-size: 40px;
-	background-color: #323438;
-	box-shadow: 0px 10px 10px #000000;
-	color: white;
-}
-
-@keyframes animateGreeting{
-	25%{border-left: 4px solid #041e47; border-right: 4px solid #041e47; }
-	75%{border-left: 4px solid #d6851d; border-right: 4px solid #d6851d;}
-	25%{border-left: 4px solid #041e47; border-right: 4px solid #041e47;}
-}
-
-
-	
-
-strong {
-	position: relative;
-	color: white;
-	margin-left: 30px;
-}
-
-
-
-#content button{
-	position: absolute;
+#createList button{
 	font-family: Nunito Sans;
 	outline: none;
-	margin-top: 20px;
-	margin-left: 20px;
-	width: 90%;
 	font-size: 120%;
-	height: 30px;
+	width: 100%;
+	height: 100%;
 	border: 1px solid black;
 	border-radius: 10px;
 	background-color: #202123;
 	color: white;
 	font-weight: bold;
 }
-
-#list {
-	position:absolute;
-	font-family: Abril Fatface;
-	table-layout: fixed;
-	margin-top: 75px;
-	margin-left: 20px;
-	background-color: #202123;
-	width: 90%;
-}
-
 
 
 
@@ -242,25 +203,36 @@ td {
 	border: 1px solid black;
 	border-radius: 8px;
 	color: white;
-	font-size: 20px;
+	font-size: 17px;
+	text-align: center;
 }
 
-#word, #def{
+#word{
 	background: #2679ff;
 	background-color: #202123;
 	border: none;
+	text-align: center;
+	color: white;
 }
 
 
-#header #justTerms div{
-	color: #395f7c;
-}
 
-
-#content button:hover{
+#createList button:hover{
 	cursor: pointer;
-	margin-top: 15px;
-	box-shadow: 0 6px 10px #000000;
+	background-color: #041e47;
+}
+
+#lookUp:hover {
+	cursor: pointer;
+}
+
+
+@media (min-width: 800px) {  
+td {font-size: 30px;} 
+
+#tableBox {
+	margin-left: 10%;
+}
 }
 
 

@@ -23,7 +23,6 @@ function createList() {
 				var div = document.createElement("div");
 				div.id = "status";
 				var wordCell = tableRows[i].cells[0];
-				var definitionCell = tableRows[i].cells[1];
 			
 				currentWordDict = data.Words[i];
 				key = Object.keys(currentWordDict);
@@ -32,10 +31,8 @@ function createList() {
 				wordDefinition = JSON.stringify(value[0]);
 				
 				word = key.replace(/"/g, "");
-				wordDefinition = wordDefinition.replace(/"/g, "");
 				
 				wordCell.innerHTML = word.toUpperCase();
-				definitionCell.innerHTML = wordDefinition.toUpperCase();
 				wordCell.appendChild(div);
 			}
 		}

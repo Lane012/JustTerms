@@ -2,6 +2,10 @@
  
  <head>
  {% block css %}{% endblock %}
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <link href="https://fonts.googleapis.com/css?family=Nunito Sans" rel="stylesheet" type="text/css">
  <link href="https://fonts.googleapis.com/css?family=Abril Fatface" rel="stylesheet" type="text/css">
  <link rel="stylesheet" type="text/css" href="static/css/base.css">
@@ -9,33 +13,27 @@
  <title>{% block title %}Blah{% endblock %}</title>
  </head>
  <body>
- 	<div id="main">
- 		<header class="Header"">
- 			<div class="buttons" id="header">
- 				<ul>
- 					<li><a id="justTerms" href="#home">
- 							<div>JustTerms</div>
- 						</a>
+ 	<div class="container" id="headerBox">
+ 		<div class="row">
+ 			<div class="col-sm-12" id="header">
+ 				<ul class="nav nav-pills">
+ 					<li class="active">
+ 						<a id="justTerms" href="http://127.0.0.1:8000">JustTerms</a>
  					</li>
- 					<li><a id="wordBank"  href="#Words">
- 						<div>Study</div>
- 						</a>
+ 					<li>
+ 						<a id="wordBank"  href="study">Study</a>
  					</li>
- 					<li><a id="test" href="#tests">
- 						<div id="3">Test</div>
- 						</a>
+ 					<li>
+ 						<a id="test" href="#tests">Test</a>
  					</li>
- 					<li><a id="logout" href="accounts/logout">
- 						<div id="4">Logout</div>
- 						</a>
+ 					<li>
+ 						<a id="logout" href="accounts/logout">Logout</a>
  					</li>
  				</ul>
+ 				<div id="userName">{% block userName %} {% endblock %}</div>
  			</div>
- 		</header>
  	</div>
- 	<div id="content">
- 		{% block content %} {% endblock %}
- 	</div>
+	{% block content %} {% endblock %}
  </body>
 </html>
  		

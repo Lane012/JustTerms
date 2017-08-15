@@ -8,10 +8,10 @@ class WordBank():
         self.WordFetcher =  WordFetcher()
         
     
-    def getWords(self, allWords):
+    def getWords(self, getAllWords):
         jsonWordObject = self.getWordDictionary()
         
-        if(allWords):
+        if(getAllWords):
             return jsonWordObject  
         
         

@@ -1,0 +1,104 @@
+
+#buttons {
+	margin-left: 42%;
+	margin-top: 5%;
+}
+
+.button {
+	background-color: #041e47;
+}
+
+#Next {
+	font-size: 30px;
+	color:  #d6851d;
+	display: inline-block;
+}
+
+#Previous {
+	background-color: #041e47;
+	font-size: 30px;
+	color:  #d6851d;
+	display: inline-block;
+}
+	
+
+#controls {
+	padding: 0px;
+	margin-top: 3%;
+	margin-left: 42%;
+	width: 200px;
+}
+
+
+
+
+
+
+
+#frame {
+	height: 200px;
+	width: 270px;
+  	margin-left: 0;
+  	color: white;
+  	background-color: #041e47;
+	margin-top: 1%;
+	text-align: center;
+	border: 5px solid  black;
+	border-radius: 13px;
+	box-shadow: 0px 5px #d6851d;
+}
+
+
+@media (min-width: 321px) {  
+#frame{
+	   margin-top: 1%;
+	   height: 240px;
+	   width: 80%;
+	   font-size: 20px;
+	  } 
+}
+
+
+@media (min-width: 378px) {  
+#frame{
+	   margin-top: 1%;
+	   margin-left: 8%;
+	   height: 250px;
+	   width: 100%
+	   font-size: 20px;
+	   margin-bottom: 3%;
+	  } 
+}
+
+
+
+@media (min-width: 1000px) {  
+#frame{
+	   margin-bottom: 5%
+	   margin-left: 5%;
+	   margin-top: 1%;
+	   height: 300px;
+	   width: 80%;
+	   font-size: 30px;
+	  } 
+}
+
+.word {
+	
+	margin: 0 auto;
+	margin-top: 10%;
+	text-shadow: 0px 20px  8px black;
+}
+
+.definition {
+	
+	margin: 0 auto;
+	margin-top: 10%;
+	text-shadow: 0px 20px  8px black;
+}
+
+#frame:hover {
+	cursor: pointer;
+}
+
+

@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http.response import HttpResponse
-from django.template import loader
+from django.http.response import HttpResponse, HttpResponseRedirect
 from django.template.response import TemplateResponse
 from TermBuilder.helpers.WordBank import WordBank
+from TermBuilder.helpers.TemplateLoader import TemplateLoader
 from django.http import JsonResponse
 import json
 from django.contrib.auth.decorators import login_required
@@ -10,27 +10,50 @@ from django.contrib.auth.models import User
 from TermBuilder.models import Word, Definition
 from django.contrib.auth import login
 from django.conf.global_settings import LOGIN_REDIRECT_URL
-
+from TermBuilder.templates.ViewBase import ProfileHelper, WordHelper
 
 
 @login_required
 def home_page(request):
 	profile = request.user.profile
-	numOfWords = profile.getWordCount()
-	numberedMastered = profile.masteredwords.words.count()  #refractor this line (violates law of demeter)
-	
-	
-	
-	context = {}
-	
-	template = loader.get_template('home_page.html')
-	mastered_words = get_mastered_words_in_current_list(profile)
-	
-	if numOfWords > 0:
-		context = {"words": profile.getWordList(), "mastered_Words": mastered_words, "masteredWordCount": numberedMastered}
+	if request.method == "GET":
+		profileHelper = ProfileHelper(profile)
+		template = TemplateLoader().loadTemplate("home_page.html")
 		
-	return TemplateResponse(request, template, context)
+		
+		
+		if(type(template) == HttpResponseRedirect):
+			return template
 
+		numOfWords = profileHelper.getWordCount()
+		
+		context = {}
+		if numOfWords > 0:
+			context = profileHelper.getResources(masteredNeeded=True, masteredCountNeeded=True)
+			
+		WordHelper().addTotalWordCount(context)
+			
+		return TemplateResponse(request, template, context)
+
+
+@login_required
+def study_page(request):
+	profile = request.user.profile
+	if request.method == "GET":
+		profileHelper = ProfileHelper(profile)
+		template = TemplateLoader().loadTemplate("study.html")
+		
+		if(type(template) == HttpResponseRedirect):
+			return template
+		
+		context = profileHelper.getResources()
+		
+		response = TemplateResponse(request, template, context)
+		
+		return response
+	
+			
+   	 	     		
 
 def create_user_word_list(request):
 	wordList = []
@@ -83,15 +106,7 @@ def get_every_word():
 	words = Word.objects.all()
 	return words
 
-def get_mastered_words_in_current_list(profile):
-	green_words = []
-	
-	words = profile.getWordList()
-	for word in words:
-		if(word in profile.masteredwords.words.all()):
-			green_words.append(word)
-	
-	return green_words
+
 	
 	
 

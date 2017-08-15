@@ -1,69 +1,88 @@
 {% extends "base.html" %}
 
-{%block css %}<link rel="stylesheet" type="text/css" href="static/css/justTerms.css"> <link href="https://fonts.googleapis.com/css?family=Abril Fatface" rel="stylesheet" type="text/css">{% endblock %}
+{%block css %}<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/justTerms.css"> 
+  <link href="https://fonts.googleapis.com/css?family=Abril Fatface" rel="stylesheet" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+{% endblock %}
 
 {% block title %}HomePage{% endblock %}
+{% block userName %}Welcome, {{user.first_name}}{% endblock %}
 
 {% block content %}
-	<div class=body-container>
-		<div id="greeting">
-			<div class="legend">
-					<div class="legendContainer">
-						<div id="total">{{masteredWordCount}}</div>
-						<div class="meaning" id="green"></div>
-						<div class="statusName" id="mastered">Words Mastered:</div>
-					</div>
-		   </div>Welcome, 
-		   <strong>{{user.first_name }}</strong>
-		</div>
-		<div id="table">
-			<div id="createList">
-				<button class="w3-rectangle" onclick="createList()">Create New Word List</button>
+
+	<div class="container" id="tableContainer">
+		<div class="row">
+			<div class="col-sm-12 col-md-3" id="leftBox">
+				<div id="passedTest">You've passed <strong>0</strong> out of <strong>0</strong> test taken!</div>
+				<div id="example3">This is a div as an example to test the layout!!!</div>
 			</div>
-			
-			<Table id="list">
-				<tr>
-					<td id="word">Words:</td>
-					<td id="def">Definitons:</td>
-				</tr>
-				{% if words.count > 0 %}
-					{% for word in words %}
-						{% if word in mastered_Words %}
+			<div class="col-sm-12 col-md-6" id="table">
+				<div class="text" id="createList">
+					<button class="btn btn-outline mb1 navy" onclick="createList()">Create New Word List</button>
+				</div>
+				<div class="text" id="tableBox">
+					<Table id="list" class="table-hover table table-bordered">
+						<thead class="thead-inverse">
 							<tr>
-								<td>{{ word.value}}<div id="status"></div></td>
-								<td>{{word.definition.value}}</td>
+								<th id="word">Words</th>
 							</tr>
+						</thead>
+						{% if words.count > 0 %}
+							{% for word in words %}
+								{% if word in mastered_Words %}
+									<tr>
+										<td>{{ word.value}}<span id="lookUp" class="glyphicon glyphicon-book" data-toggle="popover" title="Word Definition:" data-content="{{word.definition.value}}"></span><span id="status"></span></td>
+									</tr>
+								{% else %}
+									<tr>
+										<td>{{ word.value}}<span id="lookUp" class="glyphicon glyphicon-book" data-toggle="popover" title="Word Definition:" data-content="{{word.definition.value}}"></span></td>
+									</tr>
+								{% endif %}
+							{% endfor %}
 						{% else %}
-							<tr>
-								<td>{{ word.value}}</td>
-								<td>{{word.definition.value}}</td>
-							</tr>
-						{% endif %}
-					{% endfor %}
-				{% else %}
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-					<tr><td></td><td></td></tr>
-				{%  endif %}
-			</table>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td></td><td></td></tr>
+						{%  endif %}
+					</table>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-3" id="rightBox">
+				<div id="masteredWords"> You've mastered <strong>{{masteredWordCount}}</strong> out of <strong>{{wordTotal}}</strong> possible words!</div>
+				<div class="text examples" id="example1">This is an example div to test the layout!</div>
+				<div class="text examples" id="example2">Another example!</div>
+			</div>
 		</div>
 	</div>
+	
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
 <script type="text/javascript" src="static/createList.js"></script>
 {% endblock %}
