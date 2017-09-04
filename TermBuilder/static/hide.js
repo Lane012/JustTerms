@@ -1,19 +1,27 @@
 
 var words = document.getElementsByClassName("word");
 var definitions = document.getElementsByClassName("definition");
-var lists = document.getElementsByTagName("ul");
-var header = lists[0];
-var navs = header.getElementsByTagName("li");
-navs[0].className = "";
-navs[1].className = "active";
+var title = document.getElementsByTagName("title")[0];
 
 
-for (i =1; i < words.length; i++) {
-	currentWord = words[i];
-	currentWord.style.display = "none";
+
+if(title.innerHTML == "Study") {
+	for (i =1; i < words.length; i++) {
+		currentWord = words[i];
+		currentWord.style.display = "none";
+	}
+	
+	for (i =0; i < definitions.length; i++) {
+		currentDef = definitions[i];
+		currentDef.style.display = "none";
+	}
 }
 
-for (i =0; i < definitions.length; i++) {
-	currentDef = definitions[i];
-	currentDef.style.display = "none";
+else if(title.innerHTML == "Test") {
+	var frames = document.getElementsByClassName("main");
+	
+	for(i =1; i < frames.length; i++) {
+		currentFrame = frames[i];
+		currentFrame.style.display = "none";
+	}
 }

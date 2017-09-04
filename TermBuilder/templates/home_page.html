@@ -20,12 +20,13 @@
 	<div class="container" id="tableContainer">
 		<div class="row">
 			<div class="col-sm-12 col-md-3" id="leftBox">
-				<div id="passedTest">You've passed <strong>0</strong> out of <strong>0</strong> test taken!</div>
-				<div id="example3">This is a div as an example to test the layout!!!</div>
+				<div id="passedTest">You've passed <strong>{{totalPassedTest}}</strong> out of <strong>{{totalTestTaken}}</strong> test taken!</div>
+				<div id="testScore">Test score for this word list: <strong id="currentTestScore">{{test_score}}</strong> </div>
+				<div id="lastTestScore">You made a <strong id="passScore">{{last_test_score}}</strong> on your last test!</div>
 			</div>
 			<div class="col-sm-12 col-md-6" id="table">
 				<div class="text" id="createList">
-					<button class="btn btn-outline mb1 navy" onclick="createList()">Create New Word List</button>
+					<button class="btn btn-outline mb1 navy" onclick="createList();" id="createNewList">Create New Word List<span class="glyphicon glyphicon-lock" id="lock"></span></button>
 				</div>
 				<div class="text" id="tableBox">
 					<Table id="list" class="table-hover table table-bordered">
@@ -38,11 +39,11 @@
 							{% for word in words %}
 								{% if word in mastered_Words %}
 									<tr>
-										<td>{{ word.value}}<span id="lookUp" class="glyphicon glyphicon-book" data-toggle="popover" title="Word Definition:" data-content="{{word.definition.value}}"></span><span id="status"></span></td>
+										<td>{{ word.value}}<span id="lookUp" class="glyphicon glyphicon-book" data-toggle="popover" data-placement="right" title="Word Definition:" data-content="{{word.definition.value}}"></span><span id="status"></span></td>
 									</tr>
 								{% else %}
 									<tr>
-										<td>{{ word.value}}<span id="lookUp" class="glyphicon glyphicon-book" data-toggle="popover" title="Word Definition:" data-content="{{word.definition.value}}"></span></td>
+										<td>{{ word.value}}<span id="lookUp" class="glyphicon glyphicon-book" data-toggle="popover" data-placement="right" title="Word Definition:" data-content="{{word.definition.value}}"></span></td>
 									</tr>
 								{% endif %}
 							{% endfor %}
@@ -85,4 +86,6 @@ $(document).ready(function(){
 });
 </script>
 <script type="text/javascript" src="static/createList.js"></script>
+<script type="text/javascript" src="static/lockEvaluator.js"></script>
+<script> window.onload = lockEvaluator;</script>
 {% endblock %}

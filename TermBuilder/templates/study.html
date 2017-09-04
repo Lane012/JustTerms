@@ -6,16 +6,12 @@
 {% block title %}Study{% endblock %}
 
 {% block content %}
-	<div id="buttons">
-		<button class="btn btn-primary" id="flash">Flash</button>
-		<button class="btn btun-primary" id="table">Table</button>
-	</div>
 	<div id="controls">
 		<div id="Previous">
-			<button><span id="prev"class="button glyphicon glyphicon-circle-arrow-left"></span></button>
+			<button onclick="Prev()" class="controls"><span class="button glyphicon glyphicon-circle-arrow-left"></span></button>
 		</div>
 		<div id="Next">
-			<button onclick="Next()"><span id="next" class="button glyphicon glyphicon-circle-arrow-right"></span></button>
+			<button onclick="Next()" class="controls" ><span class="button glyphicon glyphicon-circle-arrow-right"></span></button>
 		</div>
 	</div>
 	<div id="frame" onclick="Flip()">
@@ -32,9 +28,7 @@
 
 	
 	
-<script type="text/javascript" src="static/hide.js">
-window.onload = hideAll();
-</script>
-<script type="text/javascript" src="static/next.js"></script>
-<script type="text/javascript" src="static/flip.js"></script>
+<script type="text/javascript" src="static/hide.js"></script>
+<script type="text/javascript" src="static/changeActive.js"></script>
+<script type="text/javascript" src="static/Iterator.js"></script>
 {% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Test{% endblock %}
+{% block css %}<link rel="stylesheet" type="text/css" href="static/css/test.css">{% endblock %}
+
+{% block content %}
+	<div class="container" id="Exam">
+		<div class="row">
+			{% for definition, options in TestData.items %}
+				<div class="main">
+					<div class="col" id="display">
+						<div class="definition"><div class="questionNum">0</div>{{definition}}</div>
+					</div>
+					{% for option in options %}
+						<div class="row" id="options">
+							<div class="col-12 options" onclick="answerChecker(this)">{{option}}</div>
+						</div>
+					{% endfor %}
+				</div>	
+			{% endfor %}
+		</div>
+	</div>
+{% csrf_token %}
+<script>
+	var answers = {{answers|safe}};
+	var questions = {{questions|safe}};
+</script>
+<script type="text/javascript" src="static/changeActive.js"></script>
+<script type="text/javascript" src="static/hide.js"></script>
+<script type="text/javascript" src="static/testEvaluator.js"></script>
+
+{% endblock %}

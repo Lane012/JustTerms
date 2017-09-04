@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from TermBuilder import models
 from TermBuilder.helpers.WordBank import WordBank
 from TermBuilder.models import Word, Definition
+from TermBuilder.templates.ViewBase import ExamHelper
 from TermBuilder.views import create_words_and_definitons_for_user, get_every_word
 from django.test.testcases import _AssertTemplateUsedContext
 
@@ -58,6 +59,13 @@ class TestUserProfile(TestCase):
         profile = type(self.user.profile)
         self.assertEqual(models.Profile, profile)
     
+    
+
+
+        
+            
+        
+        
         
     
     

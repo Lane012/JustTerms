@@ -1,15 +1,14 @@
 
-
-
-
 #lookUp {
 	color: black;
 	font-size: 25px;
 }
+
 .popover {
 	font-size: 10px;
-	width:100%;
+	width:20%;
 }
+
 
 .popover-content {
 	font-size: 10px;
@@ -17,6 +16,8 @@
 	
 	border: 1px solid #d6851d;
 }
+
+
 
 .popover-title {
 	color: black;
@@ -49,6 +50,11 @@ strong {
 	box-shadow: 0px 5px 0px #d6851d;
 }
 
+#lock {
+	padding: 10px;
+	color: #d6851d;
+}
+
 
 #passedTest {
 	font-size: 30px;
@@ -61,7 +67,18 @@ strong {
 	box-shadow: 0px 5px 0px #d6851d;
 }
 
-#example3 {
+#testScore {
+	font-size: 30px;
+	background-color:  #041e47;
+	text-align: center;
+	border: 4px solid black;
+	color: white;
+	margin-right: 5px;
+	margin-bottom: 60px;
+	box-shadow: 0px 5px 0px #d6851d;
+}
+
+#lastTestScore {
 	font-size: 30px;
 	background-color:  #041e47;
 	text-align: center;

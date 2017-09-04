@@ -9,6 +9,10 @@ from django.db.models.fields.related import OneToOneField
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
+    currentTestScore = models.IntegerField(default=0)
+    lastTestScore = models.IntegerField(default=0)
+    totalTestTaken = models.IntegerField(default=0)
+    totalTestPassed = models.IntegerField(default=0)
     
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created,  **kwargs):
@@ -33,6 +37,11 @@ class Profile(models.Model):
     def clearWordList(self):
         self.word_set.clear()
         
+    def getTotalTestTaken(self):
+        return self.totalTestTaken
+    
+    def getTotalTestPassed(self):
+        return self.totalTestPassed
         
 class Word(models.Model):
     value = models.CharField(max_length=64, null=True)
