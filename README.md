@@ -11,4 +11,4 @@ JustTerms is the homepage: you will be shown you current list (if any),  a butto
 
 Study is the part of the site where the list definitons are covered until you hover over them (thereby allowing the user to think about what the defintion is).
 
-Test is the final process when the user feels ready to test their knowledge of the words in the lis![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+Test is the final process when the user feels ready to test their knowledge of the words in the list ![Home Page](https://user-images.githubusercontent.com/16912067/31199480-20a4d0c4-a91d-11e7-81e0-a586aebabf1a.png?raw=true "HomePage")
