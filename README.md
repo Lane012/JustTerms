@@ -5,7 +5,7 @@ The user is given a wordlist and is suppose to gradually study the terms given u
 
 The testing portion of the site will contain 3 different test that will determine at the end if the user is ready to move on to a new set of words
 
-Although the test are given to benchmark the users merits for moving on, the user will have the option to create a new list whenever desired despite if any progress or studying was done on the prior list.
+Although the test are given to benchmark the users merits for moving on, the user will have the option to create a new list (only if they pass a test with given wordlist with 70 or higher) if any progress or studying was done on the prior list.
 
 JustTerms is the homepage: you will be shown you current list (if any),  a button to generate a new list, words mastered, and more.
 
